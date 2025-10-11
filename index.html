@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>rufus-electron — ISO to USB</title>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+    button, select, input { padding: 8px; margin: 4px 0; }
+    #progressBar { width: 100%; height: 20px; background: #ddd; border-radius: 4px; }
+    #fill { height: 100%; width: 0%; background: linear-gradient(90deg,#00aaff,#0077cc); border-radius: 4px; transition: width 0.3s; }
+    pre { background: #f5f5f5; padding: 8px; border-radius: 4px; overflow-y: auto; height: 150px; }
+  </style>
+</head>
+<body>
+  <h1>rufus-electron — ISO → USB</h1>
+  <p style="color:red;">UYARI: Yanlış diski seçersen tüm verin silinir!</p>
+
+  <div>
+    <label>ISO Dosyası:</label><br>
+    <input id="isoPath" style="width:80%">
+    <button id="btnChooseIso">Seç</button>
+  </div>
+
+  <div>
+    <label>Hedef Sürücü:</label><br>
+    <select id="drives" style="width:100%"></select><br>
+    <button id="btnRefresh">Yenile</button>
+    <button id="btnUnmount">Unmount</button>
+  </div>
+
+  <div>
+    <button id="btnFlash">FLASH ET</button>
+  </div>
+
+  <div id="progressBar"><div id="fill"></div></div>
+  <div id="progressText"></div>
+  <pre id="log"></pre>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "name": "rufus-electron",
+  "version": "1.0.0",
+  "description": "Cross-platform Rufus alternative (Electron-based ISO flasher)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "Sen",
+  "license": "MIT",
+  "dependencies": {
+    "drivelist": "^9.2.3",
+    "sudo-prompt": "^9.2.1",
+    "progress-stream": "^2.0.0"
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^24.6.0"
+  },
+  "build": {
+    "appId": "com.example.rufus-electron",
+    "productName": "rufus-electron",
+    "files": ["**/*"],
+    "directories": { "buildResources": "assets" },
+    "win": { "target": ["nsis"], "publisherName": "Your Name" },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": { "target": ["dmg"] },
+    "linux": { "target": ["AppImage"] }
+  }
+}
