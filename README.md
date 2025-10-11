@@ -1,14 +1,14 @@
 # ⚡ rufus-electron
 
 [![Made with Electron](https://img.shields.io/badge/Made%20with-Electron-blue.svg)](https://www.electronjs.org/)
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![Cross Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-orange.svg)](#)
-[![Built by Arel Demircan](https://img.shields.io/badge/built%20by-Arel%20Demircan-lightgrey.svg)](#)
+[![Built by Arel Demircan](https://img.shields.io/badge/Built%20by-Arel%20Demircan-lightgrey.svg)](https://github.com/ArelDemircan)
 
 ---
 
 **rufus-electron** is a cross-platform, open-source ISO-to-USB flasher built with [Electron](https://www.electronjs.org/).  
-It’s designed as a modern alternative to **Rufus**, with a clean UI and full support for Windows, macOS, and Linux.
+It’s a modern alternative to **Rufus**, featuring a clean UI and full compatibility with Windows, macOS, and Linux.
 
 ---
 
@@ -18,7 +18,7 @@ It’s designed as a modern alternative to **Rufus**, with a clean UI and full s
   <img src="./assets/screenshot.png" alt="rufus-electron Screenshot" width="700">
 </p>
 
-*(You can replace this image with your actual app screenshot.)*
+*(Replace this image with your actual app screenshot.)*
 
 ---
 
@@ -27,48 +27,46 @@ It’s designed as a modern alternative to **Rufus**, with a clean UI and full s
 - Write `.iso` or `.img` files directly to USB drives  
 - Works on **Windows / macOS / Linux**  
 - Auto-detects removable drives  
-- Unmounts safely before flashing  
-- Progress bar and real-time feedback  
-- Requires administrator privileges only when needed  
+- Safely unmounts before writing  
+- Displays progress in real time  
+- Uses admin privileges only when required  
 
 ---
 
 ## 📦 Installation
 
-### 1️⃣ Clone or download the repository
+### 1️⃣ Clone or download
 ```bash
-git clone https://github.com/yourname/rufus-electron.git
+git clone https://github.com/ArelDemircan/rufus-electron.git
 cd rufus-electron
 2️⃣ Install dependencies
 npm install
 3️⃣ Start the app
 npm start
-💡 Tip: On macOS and Linux, you can also run:
+💡 Tip: On macOS/Linux you can also run:
 npx electron .
 🔥 How to Flash an ISO
 Click Select ISO to choose your image
-Choose the target USB drive
-Click FLASH
+Choose your target USB drive
+Press FLASH
 Wait until the progress bar reaches 100%
 “Done!” will appear when flashing completes 🎉
 🪟 Windows Elevated Writing
-On Windows, privileged writes are handled through a PowerShell helper:
+Windows uses a PowerShell helper for privileged writes:
 utils/windows-write.ps1
-This script enables raw block-level writing with proper permissions,
-working across FAT32, NTFS, and other file systems.
-🧰 Packaging the App
-You can build native installers with electron-builder.
+It performs safe, raw block-level access — compatible with FAT32, NTFS, and other formats.
+🧰 Building Packages
+Use electron-builder to create native installers.
 🪟 Windows (.exe)
 npm run dist
-Output is saved to dist/.
 🍎 macOS (.dmg)
 npm run dist -- --mac
 🐧 Linux (.AppImage)
 npm run dist -- --linux
 ⚠️ Important Warning
 This app performs low-level disk writes.
-⚠️ Selecting the wrong drive will erase all data.
-Please verify the target drive before flashing.
+⚠️ Selecting the wrong disk will erase all data.
+Always double-check your target drive before flashing.
 📁 Project Structure
 rufus-electron/
 ├─ package.json
@@ -84,15 +82,24 @@ rufus-electron/
 👨‍💻 Developer
 Created by Arel Demircan
 Goal: Build a free, modern alternative to Rufus while exploring
-Electron, system-level disk operations, and cross-platform development.
+Electron, disk management, and cross-platform app development.
 🧩 Planned Features
 ✅ ISO checksum verification (SHA256 / MD5)
 ✅ FAT32/NTFS formatting options
-🌙 Dark theme support
-🌐 Multi-language (English / Turkish)
+🌙 Dark theme
+🌐 Multi-language support (EN/TR)
 🧩 UEFI / Legacy detection
 📊 Log file output
+💬 Community & Support
+⭐ Enjoy this project?
+Give it a star on GitHub!
+🍴 Want to contribute?
+Fork the repo, make your improvements, and submit a pull request!
+
+🐞 Found a bug?
+Open an issue — feedback is always welcome.
+
 🪪 License
-Released under the MIT License.
-Feel free to use, modify, and distribute this project.
-<p align="center"> <sub>Made with ❤️ by Arel Demircan • Built using Electron</sub> </p> ```
+Licensed under the MIT License © 2025 Arel Demircan.
+You’re free to use, modify, and distribute this software.
+<p align="center"> <sub>Made with ❤️ by <a href="https://github.com/ArelDemircan">Arel Demircan</a> • Built using Electron</sub> </p> ``
